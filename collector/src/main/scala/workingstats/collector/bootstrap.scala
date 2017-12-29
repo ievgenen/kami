@@ -5,7 +5,7 @@ import workingstats.commons.Logging
 
 object bootstrap extends App with Logging {
 
-  logger.info("Hello from Collector Service!")
+  logger.info(s"Hello from Collector Service!")
 
 }
 
