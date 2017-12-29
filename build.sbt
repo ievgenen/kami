@@ -13,4 +13,10 @@ lazy val collector = (project in file("collector"))
   .settings(name := "collector")
   .settings(commonSettings, buildSettings)
   .settings(akka.modules, scalatest.modules, confs.modules, logging.modules, fp.modules)
+  .dependsOn(commons)
+
+lazy val commons = (project in file("commons"))
+  .settings(name := "commons")
+  .settings(commonSettings)
+  .settings(logging.modules)
 
