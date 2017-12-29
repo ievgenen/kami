@@ -37,5 +37,3 @@ lazy val commons = (project in file("commons"))
     case VersionRegex(v, s) => Some(s"$v-$s-SNAPSHOT")
     case _ => None
   }
-
-releaseVersionFile := file(baseDirectory.in(workingstats).value.getAbsolutePath) / "version.sbt"
