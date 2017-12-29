@@ -52,6 +52,7 @@ object Settings {
     showSuccess := true,
     ivyLoggingLevel := UpdateLogging.Full,
     releaseVersionBump := Next,
+    releaseIgnoreUntrackedFiles := true,
     publishTo := {
       val properties = new Properties()
       IO.load(properties, new File("repository.properties"))
