@@ -13,7 +13,3 @@ trait ControlRoute extends ControlHandlers with Logging {
       }
     }
 }
-
-case class D(
-  id: String
-)
