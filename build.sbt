@@ -38,3 +38,4 @@ lazy val commons = (project in file("commons"))
     case _ => None
   }
 
+releaseVersionFile := file(baseDirectory.in(workingstats).value.getAbsolutePath) / "version.sbt"
