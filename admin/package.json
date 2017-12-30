@@ -1,0 +1,63 @@
+{
+  "name": "workingstats-dashboard-package",
+  "version": "0.0.1",
+  "description": "World Bank Interactive Statistics",
+  "repository": "git@github.com:ievgenen/workingstats.git",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bootstrap": "4.0.0-beta.2",
+    "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
+    "prop-types": "^15.6.0",
+    "react": "^15.2.1",
+    "react-bootstrap": "^0.29.5",
+    "react-dom": "^15.6.2",
+    "react-hot-api": "^0.5.0",
+    "react-hot-loader": "^1.3.0",
+    "react-markdown": "^2.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^2.6.1",
+    "react-router-dom": "^4.2.2",
+    "react-transition-group": "2.2.1",
+    "reactstrap": "5.0.0-alpha.4",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "simple-line-icons": "^2.4.1",
+    "thunk": "0.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-require": "^3.0.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "create-react-class": "^15.6.2",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jsx-loader": "^0.13.2",
+    "node-sass": "^4.7.2",
+    "react-scripts": "^1.0.17",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  },
+  "scripts": {
+    "test": "test",
+    "build": "webpack"
+  },
+  "author": "Ievgen Liashchenko",
+  "license": "MIT"
+}

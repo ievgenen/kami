@@ -18,6 +18,7 @@ lazy val admin = project.enablePlugins(PlayScala)
   .settings(commonSettings)
   .settings(libraryDependencies += guice)
   .settings(play.modules)
+  .settings(PlayKeys.playRunHooks += Webpack.apply(baseDirectory.value))
 
 
 lazy val collector = (project in file("collector"))
