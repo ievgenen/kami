@@ -11,19 +11,20 @@ object Dependencies {
     val cats = "1.0.0-RC1"
     val ficus = "1.4.3"
     val gatling = "2.3.0"
-    val kafkaClients = "0.9.0.0"
+    val kafka_clients = "0.9.0.0"
     val logback = "1.2.3"
-    val logbackLogsash = "4.11"
-    val logbackKafkaAppender = "0.1.0"
+    val logback_logsash = "4.11"
+    val logback_kafka_appender = "0.1.0"
     val monocle = "1.4.0"
-    val paradiseVersion = "2.1.0"
-    val playJson = "2.6.3"
-    val playJsonExtra = "0.5.0"
-    val scalaLogging = "3.7.2"
+    val paradise = "2.1.0"
+    val play_json = "2.6.3"
+    val play_json_extra = "0.5.0"
+    val play_test = "3.1.2"
+    val scala_logging = "3.7.2"
     val scalamock = "3.6.0"
     val scalatest = "3.0.1"
     val shapeless = "2.3.2"
-    val typesafeConfig = "1.3.1"
+    val typesafe_config = "1.3.1"
     val url = "0.4.16"
   }
 
@@ -55,6 +56,11 @@ object Dependencies {
         contrlib, sprayJson) ++
       test(httpTestkit, testKit, streamTest, multinodeTest)))
   }
+  
+  object play {
+    val testPlus = "org.scalatestplus.play" %% "scalatestplus-play" % Version.play_test
+    val modules = Seq(libraryDependencies ++= test(testPlus))
+  }
 
   object gatlingTest {
     val highCharts = "io.gatling.highcharts" % "gatling-charts-highcharts" % Version.gatling
@@ -70,7 +76,7 @@ object Dependencies {
   }
 
   object confs {
-    val typesafe =  "com.typesafe" % "config" % Version.typesafeConfig
+    val typesafe =  "com.typesafe" % "config" % Version.typesafe_config
     val ficus = "com.iheart" %% "ficus" % Version.ficus
     val modules = Seq(libraryDependencies ++=
       compile(typesafe, ficus) ++ test(typesafe, ficus)
@@ -79,10 +85,10 @@ object Dependencies {
 
   object logging {
     val logbackCore = "ch.qos.logback" % "logback-classic" % Version.logback
-    val logbackEncoder = "net.logstash.logback" % "logstash-logback-encoder" % Version.logbackLogsash
-    val kafkaEncoder = "com.github.danielwegener" % "logback-kafka-appender" % Version.logbackKafkaAppender
-    val kafkaClients = "org.apache.kafka" % "kafka-clients" % Version.kafkaClients
-    val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % Version.scalaLogging
+    val logbackEncoder = "net.logstash.logback" % "logstash-logback-encoder" % Version.logback_logsash
+    val kafkaEncoder = "com.github.danielwegener" % "logback-kafka-appender" % Version.logback_kafka_appender
+    val kafkaClients = "org.apache.kafka" % "kafka-clients" % Version.kafka_clients
+    val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % Version.scala_logging
     val modules = Seq(libraryDependencies ++=
       compile(scalaLogging, logbackCore, logbackEncoder, kafkaEncoder, kafkaClients)
     )
@@ -116,10 +122,10 @@ object Dependencies {
   }
 
   object json {
-    val paradise =  "org.scalamacros" % "paradise_2.12.1" % Version.paradiseVersion
-    val playJson = "com.typesafe.play" %% "play-json" % Version.playJson
-    val playJsonExtra = "com.github.xuwei-k" %% "play-json-extra" % Version.playJsonExtra
-    val modules = Seq(libraryDependencies ++= compile(paradise))
+    val paradiseMacro =  "org.scalamacros" % "paradise_2.12.1" % Version.paradise
+    val playJson = "com.typesafe.play" %% "play-json" % Version.play_json
+    val playJsonExtra = "com.github.xuwei-k" %% "play-json-extra" % Version.play_json_extra
+    val modules = Seq(libraryDependencies ++= compile(paradiseMacro))
   }
 
   def it(m: ModuleID*): Seq[ModuleID] = m map (_ % "it,test")

@@ -13,6 +13,12 @@ lazy val workingstats = (project in file("."))
   .settings(doNotPublishSettings)
   .aggregate(collector)
 
+lazy val admin = project.enablePlugins(PlayScala)
+  .enablePlugins(PlayScala)
+  .settings(commonSettings)
+  .settings(libraryDependencies += guice)
+  .settings(play.modules)
+
 
 lazy val collector = (project in file("collector"))
   .settings(name := "collector")
