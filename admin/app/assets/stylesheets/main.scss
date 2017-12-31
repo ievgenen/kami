@@ -1,0 +1,30 @@
+@import "../stylesheets/core";
+@import "bootstrap/bootstrap-variables";
+@import "./app/widgets";
+@import "../stylesheets/app/animations";
+@import "../stylesheets/app/wordbank-form";
+
+
+.header {
+  background-color: white;
+}
+
+.country-search > span {
+  background-color: white;
+  border-right-color: transparent;
+}
+
+.country-search > input {
+  border-left-color: transparent;
+}
+
+.country-search > input:hover {
+  border-left-color: transparent;
+}
+
+.table thead.bordered-palegreen>tr>th {
+  border-bottom: 3px solid rgb(160, 212, 104);
+}
+.ref-data-table td {
+  padding: 5px;
+}

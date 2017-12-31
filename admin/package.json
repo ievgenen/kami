@@ -1,8 +1,11 @@
 {
-  "name": "workingstats-dashboard-package",
+  "name": "workingstats",
   "version": "0.0.1",
   "description": "World Bank Interactive Statistics",
-  "repository": "git@github.com:ievgenen/workingstats.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ievgenen/workingstats.git"
+  },
   "main": "webpack.config.js",
   "directories": {
     "test": "test"
@@ -14,6 +17,7 @@
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
+    "jquery": "^3.2.1",
     "prop-types": "^15.6.0",
     "react": "^15.2.1",
     "react-bootstrap": "^0.29.5",
@@ -59,5 +63,16 @@
     "build": "webpack"
   },
   "author": "Ievgen Liashchenko",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ievgenen/workingstats/issues"
+  },
+  "homepage": "https://github.com/ievgenen/workingstats#readme",
+  "keywords": [
+    "world",
+    "bank",
+    "open",
+    "api",
+    "statistics"
+  ]
 }

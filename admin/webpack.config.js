@@ -1,5 +1,5 @@
 const path = require('path');
-const raw = 'public/javascripts';
+const raw = 'app/assets/javascripts';
 const appPath = {
   output: path.resolve(__dirname, raw, 'dist'),
   appEntryPoint: path.join(path.join(__dirname, raw), 'main.js')

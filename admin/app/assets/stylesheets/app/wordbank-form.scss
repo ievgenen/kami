@@ -1,0 +1,32 @@
+.wb-form {
+  width: 40%;
+  min-width: 400px;
+}
+
+.load-all {
+  right: 4%;
+  text-align: right;
+}
+
+.task-header {
+}
+
+.task-table > tbody > tr > td {
+  padding: .1rem;
+}
+
+.task-table > tbody > tr .aspect {
+  width: 30%;
+}
+
+.task-table > tbody > tr .date {
+  width: 30%;
+}
+
+.task-table > tbody > tr .action {
+  width: 20%;
+}
+
+.task-table > tbody > tr .status {
+  width: 20%;
+}
