@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
-import Collector from '../javascripts/containers/Collector';
+import DataRetriever from '../javascripts/components/containers/DataRetriever';
 import { getCommonAspects } from "../javascripts/actions/index"
 
 const middleware = [thunk];
@@ -20,7 +20,7 @@ store.dispatch(getCommonAspects());
 
 ReactDOM.render((
   <Provider store={store}>
-    <Collector/>
+    <DataRetriever/>
   </Provider>
   ),
   document.getElementById('app')
