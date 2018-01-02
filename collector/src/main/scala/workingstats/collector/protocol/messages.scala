@@ -34,4 +34,8 @@ object Command extends Enumeration {
   
   val Start = Val("start", "start_ack")
   val Stop = Val("stop", "stop_ack")
+  val LoadAllCommons = Val("load_all_commons", "load_all_commons_ack")
+  val LoadCountries = Val("load_countries", "load_countries_ack")
+  val LoadLendingTypes = Val("load_lending_types", "load_lending_types_ack")
+  val LoadIncomeLevels = Val("load_income_levels", "load_income_levels_ack")
 }

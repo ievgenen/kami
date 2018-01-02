@@ -17,6 +17,10 @@ object JsonSupport extends SprayJsonSupport with DefaultJsonProtocol {
           action match {
             case "start" => Command.Start
             case "stop" => Command.Stop
+            case "load_all_commons" => Command.LoadAllCommons
+            case "load_countries" => Command.LoadCountries
+            case "load_lending_types" => Command.LoadLendingTypes
+            case "load_income_levels" => Command.LoadIncomeLevels
             case cmd =>
               throw DeserializationException(s"Unknown command: '$cmd'")
           }
