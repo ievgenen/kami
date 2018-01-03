@@ -13,7 +13,7 @@ trait CommonDataRoute extends Logging {
           complete("Admin Data Service Country List!")
         }
         path("lendingtypes") {
-          complete("Admin Data Service Country List!")
+          complete("Admin Data Service Lending Types List!")
         }
       }
     }
