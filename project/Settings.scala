@@ -46,7 +46,6 @@ object Settings {
     maintainer := "Ievgen Liashchenko <ievgenen@gmail.com>",
     packageDescription := "Data Collecting Application",
     packageSummary := "Doing Business Index World Statistics",
-    mainClass in Compile := Some("workingstats.collector.bootstrap"),
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     publishMavenStyle := true,
     showSuccess := true,

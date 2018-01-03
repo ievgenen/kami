@@ -11,7 +11,7 @@ cancelable in Global := true
 
 lazy val workingstats = (project in file("."))
   .settings(doNotPublishSettings)
-  .aggregate(collector)
+  .aggregate(collector, adminDataService)
 
 lazy val admin = project.enablePlugins(PlayScala)
   .enablePlugins(PlayScala)
@@ -23,6 +23,16 @@ lazy val admin = project.enablePlugins(PlayScala)
 
 lazy val collector = (project in file("collector"))
   .settings(name := "collector")
+  .settings(Seq(mainClass in Compile := Some("workingstats.collector.bootstrap")))
+  .enablePlugins(JavaAppPackaging, BuildInfoPlugin, GitVersioning)
+  .settings(makeDeploymentSettings(Universal, packageZipTarball in Universal, "tar.gz"))
+  .settings(commonSettings, buildSettings, publishSettings)
+  .settings(akka.modules, scalatest.modules, confs.modules, logging.modules, fp.modules)
+  .dependsOn(commons)
+
+lazy val adminDataService = (project in file("admin-data-service"))
+  .settings(name := "AdminDataService")
+  .settings(Seq(mainClass in Compile := Some("workingstats.admindataservice.bootstrap")))
   .enablePlugins(JavaAppPackaging, BuildInfoPlugin, GitVersioning)
   .settings(makeDeploymentSettings(Universal, packageZipTarball in Universal, "tar.gz"))
   .settings(commonSettings, buildSettings, publishSettings)
