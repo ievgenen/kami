@@ -17,6 +17,7 @@ object Dependencies {
     val logback_kafka_appender = "0.1.0"
     val monocle = "1.4.0"
     val paradise = "2.1.0"
+    val phantom = "2.18.0"
     val play_json = "2.6.3"
     val play_json_extra = "0.5.0"
     val play_test = "3.1.2"
@@ -126,6 +127,12 @@ object Dependencies {
     val playJson = "com.typesafe.play" %% "play-json" % Version.play_json
     val playJsonExtra = "com.github.xuwei-k" %% "play-json-extra" % Version.play_json_extra
     val modules = Seq(libraryDependencies ++= compile(paradiseMacro))
+  }
+  
+  object database {
+    val phantom =  "com.outworkers" % "phantom-dsl_2.12" % Version.phantom
+    val modules = Seq(libraryDependencies ++= compile(phantom))
+  
   }
 
   def it(m: ModuleID*): Seq[ModuleID] = m map (_ % "it,test")
