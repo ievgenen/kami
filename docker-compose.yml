@@ -6,4 +6,4 @@ services:
     ports:
       - "8180:8080"
     volumes:
-      - /home/dev/stats/logs/dataloader:/var/log/stats
+      - /home/dev/kami/logs/dataloader:/var/log/kami
