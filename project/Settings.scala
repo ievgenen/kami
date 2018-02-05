@@ -12,7 +12,7 @@ import com.typesafe.sbt.packager.docker.DockerPlugin.autoImport.{dockerBaseImage
 
 object Settings {
 
-  lazy val workingStatsRepoUrl = "http://192.168.1.101/"
+  lazy val kamiRepoUrl = "http://192.168.1.101/"
   lazy val commonSettings = scalaSettings ++ lintingSettings
   lazy val settingsGatling = scalaSettings ++ buildSettings
   lazy val publishSettings = packagerSettings ++ dockerSettings
@@ -40,12 +40,12 @@ object Settings {
 
   import ReleaseTransformations._
   lazy val buildSettings = Seq(
-    organization := "workingstats",
-    organizationName := "Workingstats",
-    buildInfoPackage := "collector",
+    organization := "kami",
+    organizationName := "Kami",
+    buildInfoPackage := "dataLoader",
     maintainer := "Ievgen Liashchenko <ievgenen@gmail.com>",
-    packageDescription := "Data Collecting Application",
-    packageSummary := "Doing Business Index World Statistics",
+    packageDescription := "Personal Active Tutor",
+    packageSummary := "Personal Active Tutor\"",
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     publishMavenStyle := true,
     showSuccess := true,
@@ -69,7 +69,7 @@ object Settings {
     ),
     publishArtifact in(Compile, packageSrc) := false,
     resolvers ++= Seq(
-      "collectorReleasesRepo" at s"$workingStatsRepoUrl/nexus/content/repositories/workingstats/",
+      "kamiReleasesRepo" at s"$kamiRepoUrl/nexus/content/repositories/kami/",
       Resolver.typesafeRepo("releases").copy("typesafe-releases-custom"),
       Resolver.sonatypeRepo("snapshots"),
       Resolver.sonatypeRepo("releases")
@@ -92,7 +92,7 @@ object Settings {
   )
 
   lazy val dockerSettings = Seq(
-    dockerBaseImage := "workingstats/openjdk8:141",
+    dockerBaseImage := "kami/openjdk8:141",
     dockerUpdateLatest := true
   )
 

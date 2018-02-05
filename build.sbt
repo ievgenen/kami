@@ -9,9 +9,9 @@ shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project
 fork in run := true
 cancelable in Global := true
 
-lazy val workingstats = (project in file("."))
+lazy val kami = (project in file("."))
   .settings(doNotPublishSettings)
-  .aggregate(collector, adminDataService)
+  .aggregate(dataloader, adminDataService)
 
 lazy val admin = project.enablePlugins(PlayScala)
   .enablePlugins(PlayScala)
@@ -21,9 +21,9 @@ lazy val admin = project.enablePlugins(PlayScala)
   .settings(PlayKeys.playRunHooks += Webpack.apply(baseDirectory.value))
 
 
-lazy val collector = (project in file("collector"))
-  .settings(name := "collector")
-  .settings(Seq(mainClass in Compile := Some("workingstats.collector.bootstrap")))
+lazy val dataloader = (project in file("dataLoader"))
+  .settings(name := "dataloader")
+  .settings(Seq(mainClass in Compile := Some("kami.dataloader.bootstrap")))
   .enablePlugins(JavaAppPackaging, BuildInfoPlugin, GitVersioning)
   .settings(makeDeploymentSettings(Universal, packageZipTarball in Universal, "tar.gz"))
   .settings(commonSettings, buildSettings, publishSettings)
@@ -32,7 +32,7 @@ lazy val collector = (project in file("collector"))
 
 lazy val adminDataService = (project in file("admin-data-service"))
   .settings(name := "AdminDataService")
-  .settings(Seq(mainClass in Compile := Some("workingstats.admindataservice.bootstrap")))
+  .settings(Seq(mainClass in Compile := Some("kami.admindataservice.bootstrap")))
   .enablePlugins(JavaAppPackaging, BuildInfoPlugin, GitVersioning)
   .settings(makeDeploymentSettings(Universal, packageZipTarball in Universal, "tar.gz"))
   .settings(commonSettings, buildSettings, publishSettings)

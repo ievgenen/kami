@@ -1,11 +1,7 @@
 {
-  "name": "workingstats",
+  "name": "kami",
   "version": "0.0.1",
-  "description": "World Bank Interactive Statistics",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ievgenen/workingstats.git"
-  },
+  "description": "Personal Active Tutor",
   "main": "webpack.config.js",
   "directories": {
     "test": "test"
@@ -64,10 +60,7 @@
   },
   "author": "Ievgen Liashchenko",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ievgenen/workingstats/issues"
-  },
-  "homepage": "https://github.com/ievgenen/workingstats#readme",
+  "homepage": "https://github.com/ievgenen/kami#readme",
   "keywords": [
     "world",
     "bank",

@@ -1,9 +1,9 @@
 version: "3.3"
 services:
-  collector:
-    image: workingstats/collector:latest
-    container_name: stats-collector
+  dataloader:
+    image: kami/dataloader:latest
+    container_name: data-loader
     ports:
       - "8180:8080"
     volumes:
-      - /home/dev/stats/logs/collector:/var/log/stats
+      - /home/dev/stats/logs/dataloader:/var/log/stats
