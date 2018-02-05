@@ -1,2 +1,2 @@
 # Kami
-Personal Active Tutor.
+Personal Active Language Tutor.
