@@ -1,8 +1,8 @@
-package workingstats.admindataservice.service.websocket
+package kami.admindataservice.service.rest
 
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import workingstats.commons.Logging
+import kami.commons.Logging
 
 trait CommonDataRoute extends Logging {
   
