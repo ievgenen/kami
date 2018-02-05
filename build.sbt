@@ -21,7 +21,7 @@ lazy val admin = project.enablePlugins(PlayScala)
   .settings(PlayKeys.playRunHooks += Webpack.apply(baseDirectory.value))
 
 
-lazy val dataloader = (project in file("dataLoader"))
+lazy val dataloader = (project in file("data-loader"))
   .settings(name := "dataloader")
   .settings(Seq(mainClass in Compile := Some("kami.dataloader.bootstrap")))
   .enablePlugins(JavaAppPackaging, BuildInfoPlugin, GitVersioning)
